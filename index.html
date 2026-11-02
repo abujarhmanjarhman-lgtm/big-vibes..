@@ -1,1 +1,75 @@
 index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Vibes - Connect with Everyone</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f4f8;color:#20243a;font-family:Arial,sans-serif}
+header{background:#5425c7;color:white;padding:20px;text-align:center}
+header h1{margin:0;font-size:30px}
+header p{margin:7px 0 0}
+main{max-width:650px;margin:25px auto;padding:15px}
+.card{background:white;padding:20px;border-radius:15px;margin-bottom:18px;box-shadow:0 3px 12px #00000010}
+h2{margin-top:0}
+input,textarea{width:100%;padding:13px;border:1px solid #ddd;border-radius:9px;margin:7px 0;font-size:16px}
+button{background:#5425c7;color:white;border:0;border-radius:9px;padding:12px 18px;font-size:15px;cursor:pointer}
+button:hover{background:#3e179e}
+.post{border-top:1px solid #eee;padding:15px 0}
+.post small{color:#777}
+footer{text-align:center;padding:25px;color:#777}
+</style>
+</head>
+<body>
+<header>
+<h1>✨ BIG VIBES</h1>
+<p>Connect. Share. Make Friends.</p>
+</header>
+<main>
+<section class="card">
+<h2>Welcome to Big Vibes!</h2>
+<p>A place to share your moments, meet new people and enjoy great conversations.</p>
+<button onclick="alert('Welcome to Big Vibes! Sign-up is coming soon.')">Join Big Vibes</button>
+<button onclick="alert('Login is coming soon!')">Log In</button>
+</section>
+
+<section class="card">
+<h2>What's happening?</h2>
+<textarea id="message" placeholder="Share something with everyone..."></textarea>
+<button onclick="addPost()">Share Post</button>
+</section>
+
+<section class="card">
+<h2>Community Feed</h2>
+<div id="feed">
+<div class="post">
+<strong>Big Vibes Team</strong>
+<p>Welcome to our new community! 🎉</p>
+<small>Your place to connect and share.</small>
+</div>
+</div>
+</section>
+</main>
+<footer>© 2026 Big Vibes. Made for everyone. 💜</footer>
+
+<script>
+function addPost(){
+const box=document.getElementById('message');
+const message=box.value.trim();
+if(!message){alert('Please write something first.');return;}
+const post=document.createElement('div');
+post.className='post';
+const name=document.createElement('strong');
+name.textContent='You';
+const content=document.createElement('p');
+content.textContent=message;
+post.append(name,content);
+document.getElementById('feed').prepend(post);
+box.value='';
+}
+</script>
+</body>
+</html>
